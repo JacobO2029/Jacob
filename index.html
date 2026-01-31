@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS Quest Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <h1>CS Quest Lab</h1>
+        <p class="tagline">Minimalist, focused practice for core computer science skills.</p>
+      </div>
+      <div class="account-status" id="accountStatus">Not signed in</div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Leveling System</h2>
+        <p>
+          Earn points for every solved question. Your level increases every 120 points.
+          Track streaks, see topic mastery, and keep your progress stored on this device.
+        </p>
+        <div class="level-grid">
+          <div>
+            <span class="label">Level</span>
+            <span class="value" id="levelValue">1</span>
+          </div>
+          <div>
+            <span class="label">Points</span>
+            <span class="value" id="pointsValue">0</span>
+          </div>
+          <div>
+            <span class="label">Streak</span>
+            <span class="value" id="streakValue">0</span>
+          </div>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" id="progressFill"></div>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Account & Email</h2>
+          <p>
+            Create a study account to save progress and store your email for reminders.
+            Everything is saved locally in your browser.
+          </p>
+          <form id="accountForm" class="stack">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Ada Lovelace" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="ada@example.com" required />
+            </label>
+            <label>
+              Create a password
+              <input type="password" name="password" required minlength="4" />
+            </label>
+            <button type="submit">Create account</button>
+          </form>
+          <div class="divider"></div>
+          <form id="loginForm" class="stack">
+            <label>
+              Existing account name
+              <input type="text" name="name" placeholder="Ada Lovelace" required />
+            </label>
+            <label>
+              Password
+              <input type="password" name="password" required />
+            </label>
+            <button type="submit" class="ghost">Sign in</button>
+          </form>
+          <button id="logoutBtn" class="ghost hidden">Sign out</button>
+        </article>
+
+        <article class="card">
+          <h2>Study Dashboard</h2>
+          <p>
+            Pick a subject, solve a question, and record your solution to gain points.
+            Use the help button for a gentle hint instead of a full solution.
+          </p>
+          <div class="subject-picker" id="subjectPicker"></div>
+          <div class="question-box">
+            <div class="question-header">
+              <h3 id="questionTitle">Choose a subject</h3>
+              <button id="helpBtn" class="ghost" disabled>Help</button>
+            </div>
+            <p id="questionPrompt">Select a subject to load a practice question.</p>
+            <div class="hint" id="hintBox"></div>
+            <div class="question-actions">
+              <button id="solvedBtn" disabled>Mark as solved</button>
+              <button id="nextBtn" class="ghost" disabled>Next question</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Arrays</h2>
+          <p>
+            Arrays store ordered collections. Focus on indexing, iteration, and manipulating
+            sequences efficiently.
+          </p>
+          <ul class="bullet-list" id="arrayStats"></ul>
+        </article>
+        <article class="card">
+          <h2>Strings</h2>
+          <p>
+            Strings are arrays of characters. Practice scanning, splitting, and pattern
+            matching without extra memory.
+          </p>
+          <ul class="bullet-list" id="stringStats"></ul>
+        </article>
+        <article class="card">
+          <h2>Logic</h2>
+          <p>
+            Logic questions strengthen reasoning and flow control. Build confidence with
+            conditionals, loops, and invariants.
+          </p>
+          <ul class="bullet-list" id="logicStats"></ul>
+        </article>
+        <article class="card">
+          <h2>Object-Oriented Programming</h2>
+          <p>
+            OOP focuses on modeling real systems. Practice designing classes, methods,
+            encapsulation, and polymorphism.
+          </p>
+          <ul class="bullet-list" id="oopStats"></ul>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Progress is stored locally. Use the admin portal for a data snapshot.</p>
+      <a href="admin.html" class="ghost">Admin portal</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
